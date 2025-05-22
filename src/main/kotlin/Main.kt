@@ -34,10 +34,8 @@ class Directory(
         println(children.joinToString("\n"))
     }
 
-    fun addFile(file: List<FileSystem>) {
-        file.forEach {
-            children.add(it)
-        }
+    fun add(vararg children: FileSystem) {
+        this.children.addAll(children)
     }
 }
 
@@ -54,7 +52,7 @@ fun main() {
     val file2 = File(filename = "Como aumentar o antebraço.json")
     val file3 = File(filename = "Design Patterns.md")
     val file4 = File(filename = "Clash of clans base atualizada.txt")
-    apoo.addFile(listOf(file1, file2, file3))
+    apoo.add(file1, file2, file3)
 
     cliente.rmrf(file4)
     cliente.rmrf(apoo)
