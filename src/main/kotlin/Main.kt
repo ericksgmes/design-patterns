@@ -34,7 +34,7 @@ class Directory(
         println(children.joinToString("\n"))
     }
 
-    fun addFile(file: List<File>) {
+    fun addFile(file: List<FileSystem>) {
         file.forEach {
             children.add(it)
         }
